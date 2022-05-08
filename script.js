@@ -96,11 +96,13 @@ const container = document.createElement('div');
 container.className = 'container';
 document.body.append(container);
 
+const infBlock = document.createElement('div');
+infBlock.className = 'info';
+infBlock.innerText = `OS: Windows. Change language: ctr + shift.${localStorage.getItem('Lang')}`;
+container.append(infBlock);
+
 const textArea = document.createElement('textarea');
 textArea.className = 'textarea';
-// textArea.setAttribute('rows', '25');
-// textArea.setAttribute('cols', '125');
-// textArea.setAttribute('autofocus', 'on');
 container.append(textArea);
 
 const keyboard = document.createElement('div');
@@ -122,7 +124,6 @@ const button = document.createElement('div');
 button.className = 'button';
 
 const langButton = document.createElement('div');
-// langButton.className = 'lang';
 
 const caseSymbol = document.createElement('div');
 caseSymbol.className = 'case';

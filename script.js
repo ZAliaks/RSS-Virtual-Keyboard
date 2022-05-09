@@ -98,7 +98,7 @@ document.body.append(container);
 
 const infBlock = document.createElement('div');
 infBlock.className = 'info';
-infBlock.innerText = `OS: Windows. Change language: ctr + shift.${localStorage.getItem('Lang')}`;
+infBlock.innerText = 'OS: Windows. Change language: ctr + shift.';
 container.append(infBlock);
 
 const textArea = document.createElement('textarea');
@@ -210,9 +210,8 @@ const changeCaps = () => {
 
 const onButtonDown = (event) => {
   const btnValue = event.target.innerHTML;
-  addActiveClass(btnValue);
   let text = textArea.value;
-  if (btnValue === 'shift') {
+  if (btnValue === 'Shift') {
     changeCaps();
   }
   if (btnValue === 'capsLock') {
@@ -247,6 +246,7 @@ const onButtonDown = (event) => {
     window.getSelection().removeAllRanges();
   }
 };
+
 const onButtonUp = (event) => {
   removeActiveClass();
   if (event.target.innerHTML === 'shift') {
@@ -302,6 +302,7 @@ document.addEventListener(
 );
 
 document.addEventListener('keyup', () => {
+  // console.log(pressedKeys);
   if (pressedKeys[pressedKeys.length - 1] === 16) {
     changeCaps();
   }
